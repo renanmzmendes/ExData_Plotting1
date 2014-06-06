@@ -3,6 +3,7 @@ consumption <- read.table("household_power_consumption.txt", sep=";", header=TRU
 consumption <- consumption[consumption$Date == "1/2/2007" | consumption$Date == "2/2/2007",]
 consumption <- consumption[complete.cases(consumption),]
 
+# Plotting the lines of the three different sub meterings in the same image
 png()
 datetimes <- strptime(paste(consumption$Date, consumption$Time), format="%d/%m/%Y %H:%M:%S", tz="UTC")
 plot(datetimes, consumption$Sub_metering_1, type="l", ylab="Energy sub metering", xlab="")
