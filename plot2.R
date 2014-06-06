@@ -6,6 +6,6 @@ consumption <- consumption[complete.cases(consumption),]
 # Plotting to PNG image
 # X-axis is created by the concatenation of both date and time
 # and their transformation to a POSIX object
-png()
+png("plot2.png")
 plot(strptime(paste(consumption$Date, consumption$Time), format="%d/%m/%Y %H:%M:%S", tz="UTC"), consumption$Global_active_power, type="l", xlab="", ylab="Global Active Power (kilowatts)")
 dev.off()

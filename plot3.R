@@ -4,7 +4,7 @@ consumption <- consumption[consumption$Date == "1/2/2007" | consumption$Date == 
 consumption <- consumption[complete.cases(consumption),]
 
 # Plotting the lines of the three different sub meterings in the same image
-png()
+png("plot3.png")
 datetimes <- strptime(paste(consumption$Date, consumption$Time), format="%d/%m/%Y %H:%M:%S", tz="UTC")
 plot(datetimes, consumption$Sub_metering_1, type="l", ylab="Energy sub metering", xlab="")
 lines(datetimes, consumption$Sub_metering_2, col="red")

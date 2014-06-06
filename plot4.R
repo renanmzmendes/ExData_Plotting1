@@ -3,7 +3,7 @@ consumption <- read.table("household_power_consumption.txt", sep=";", header=TRU
 consumption <- consumption[consumption$Date == "1/2/2007" | consumption$Date == "2/2/2007",]
 consumption <- consumption[complete.cases(consumption),]
 
-png()
+png("plot4.png")
 par(mfcol = c(2, 2))
 datetimes <- strptime(paste(consumption$Date, consumption$Time), format="%d/%m/%Y %H:%M:%S", tz="UTC")
 plot(datetimes, consumption$Global_active_power, type="l", xlab="", ylab="Global Active Power (kilowatts)")
